@@ -27,7 +27,29 @@ function theme_acf_blocks_init() {
 			'icon'				=> 'align-center',
 			'keywords'			=> array( 'XXX' ),
       'mode' 	=> 'edit',
-		));
+    ));
+    
+    acf_register_block_type(array(
+			'name'				=> 'artist-hero',
+			'title'				=> __('Artist Hero'),
+			'description'		=> __('Artist Herol'),
+      'render_callback'	=> 'theme_acf_block_render_callback',
+      'render_template' => 'templates/blocks/artist-hero.php',
+			'icon'				=> 'align-center',
+			'keywords'			=> array( 'hero' ),
+      'mode' 	=> 'edit',
+    )); 
+
+    acf_register_block_type(array(
+			'name'				=> 'featured-artist',
+			'title'				=> __('Featured Artist'),
+			'description'		=> __('Featured Artist'),
+      'render_callback'	=> 'theme_acf_block_render_callback',
+      'render_template' => 'templates/blocks/featured-artist.php',
+			'icon'				=> 'align-center',
+			'keywords'			=> array( '' ),
+      'mode' 	=> 'edit',
+    )); 
   }
 }
 add_action('acf/init', 'theme_acf_blocks_init');
@@ -42,6 +64,8 @@ function theme_allowed_block_types($allowed_blocks, $post) {
 
   return array(
     'acf/xxx',
+    'acf/artist-hero',
+    'acf/featured-artist',   
   );
 }
 add_filter('allowed_block_types', 'theme_allowed_block_types', 10, 2);

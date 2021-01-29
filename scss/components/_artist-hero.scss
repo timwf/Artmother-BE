@@ -1,0 +1,189 @@
+.artist-hero{
+  position: fixed;
+  top: 0px;
+  z-index: -1;
+  width: 100%;
+
+  @include respond-to(sm){
+    margin-top: 20px;
+    top: 66px;
+  }
+
+  @include respond-to(xl){
+    margin-top: 30px;
+  }
+
+  &__height{
+    height: 100vh;
+  }
+
+  .animated-line{
+    top: 164px;
+
+    @include respond-to(sm){
+      top: 300px;
+    }
+
+    @include respond-to(xl){
+      top: 350px;
+    }
+  }
+
+  &__title{
+
+    .delay{
+        transition-delay: 6.5s !important;      
+    }
+
+
+
+    h1{
+      font-family: NeueMachina-Bold;
+      color: red;
+      font-size: 56px;
+      line-height: 0.95;
+      text-transform: uppercase; 
+
+
+      @include respond-to(sm){
+        font-size: 78px;
+      }
+
+      @include respond-to(xl){
+        font-size: 105px;
+      } 
+    }
+  }
+
+  &__name{
+    grid-column-start: 2;
+    grid-column-end: 13;    
+
+    @include respond-to(md){
+      grid-column-start: 1;
+      grid-column-end: 13;  
+    }
+  }
+
+  &__image-text{
+    position: relative;
+    margin-top: 25px;
+
+    @include respond-to(md){
+      margin-top: 0px;
+
+    }
+  }
+
+
+  &__image-wrap{
+    grid-column-start: 3;
+    grid-column-end: 13;
+    // height: calc(100vh - 281px);
+
+    @include respond-to(md){
+      grid-column-start: 4;
+      grid-column-end: 9;
+      height: calc(100vh - 320px);
+    }
+
+    @include respond-to(xl){
+      height: calc(100vh - 365px);
+    }
+
+    img{
+      // height: 100%;
+      float: right;
+      transform: translateX(12px);
+      // height: 100%;
+
+      @include respond-to(md){
+        transform: translateX(0px);
+        max-height: 100%;
+      }
+    }
+  }
+
+  &__text-wrap{
+    grid-column-start: 2;
+    grid-column-end: 11;
+    display: flex;
+    align-items: center;
+    margin-top: 18px;
+
+    @include respond-to(md){
+      grid-column-start: 9;
+      grid-column-end: 13;
+      margin-top: 0px;
+    }
+
+    @include respond-to(sm){
+      padding-right: 90px;
+    }
+
+    @include respond-to(xl){
+      padding-right: 65px;
+    }
+  }
+
+  h3{
+    margin-top: 25px;
+    @include respond-to(md){
+      margin-top: 0px;
+    }
+  }
+
+
+
+  .is-visible.animated-line-show{
+    animation-delay: 5s;
+    animation-duration: 2s;
+  }
+
+  &__arrow{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: absolute;
+    padding-bottom: 13px;
+    padding-top: 10px;
+    bottom: 0;
+    background-color: white;
+
+    @include respond-to(xl){
+      margin-top: 0px;
+    }
+
+    svg{
+      height: 20px;
+      transform: rotate(180deg);
+      position: relative;
+      animation-name: bounce;
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+
+      @include hover{
+        cursor: pointer;
+      }
+
+      path{
+        fill: $red;
+      }
+
+      @include respond-to(xl){
+        height: 28px;
+      }
+    }
+  }
+}
+
+.artist-hero__second-name.delay{
+  transition-delay: 6.8s !important;
+}
+
+@keyframes bounce {
+  0% {top: 0px;}
+  80% {top: -7px;}
+  100% {top: 0px;}
+}
