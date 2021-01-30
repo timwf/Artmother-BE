@@ -80,6 +80,8 @@
       height: 200px;
       text-align: center;
       background-color: #e2e2e22b;
+      display: flex;
+      justify-content: center;
 
       @include respond-to(sm){
         height: 500px;
@@ -89,7 +91,7 @@
     .slick-dots{
       display: flex;
       margin: 0px 15%;
-      justify-content: space-between;
+      justify-content: space-evenly;
       margin-top: 20px;
       
       li{

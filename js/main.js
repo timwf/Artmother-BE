@@ -430,7 +430,7 @@ $(document).ready(() => {
 
       if(width > 768){
         $('#thumb-lens').remove()
-        let evt = new Event(),
+        let evt = new Event(''),
         m = new Magnifier(evt);     
     
         m.attach({
@@ -553,6 +553,8 @@ $(document).ready(() => {
     const searchIcon = $('.artists__search-bar svg')
     enableScrolling()
 
+
+
     if(!$(searchGrid).length){
       return
     }
@@ -589,15 +591,34 @@ $(document).ready(() => {
   }
 
   function initArtGrid(){  
-    const grid = $('.art__grid')
+    let grid = $('.art__grid')
+    let allItems;
+    let x, rowHeight, rowGap, rowSpan;
+    const allItemsInit = $('.art__item')
+    const artistTitle = $('.js-artist-title')
 
     if(!$(grid).length){
       return;
     }
-    
+
+    let url = location.hash;
+    url = url.replace(/%20/g, " ").substring(1);
+    console.log(url);
+
+    $(allItemsInit).each(function(){
+      let artId = $(this).attr('data-artist')     
+
+      if(url && artId != url){
+        $(this).remove()
+      }
+
+      if(url == artId){
+        let title = $(this).attr('data-artisttitle')
+        $(artistTitle).text(title)
+      }
+    })    
 
     function resizeGridItem(item){
-
       grid = document.getElementsByClassName("art__grid")[0];
       rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
       rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
@@ -656,12 +677,9 @@ $(document).ready(() => {
         }
       })  
     }
-
     appendRadios(removeDulpicates(mediumArr), 'medium')
     appendRadios(removeDulpicates(priceArr), 'price')
     appendRadios(removeDulpicates(sizeArr), 'size')
-
-
   }
 
 

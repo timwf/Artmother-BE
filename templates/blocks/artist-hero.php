@@ -1,3 +1,16 @@
+
+<?php 
+  $first = get_field('artist_first_name');
+  $second = get_field('artist_second_name');
+  $image = get_field('image');
+  $copy = get_field('copy');
+?>
+
+
+
+
+
+
 <section class="artist-hero">
   <div class="animated-line__container">
     <div class="animated-line js-visibility animated-line-show"> </div>
@@ -5,16 +18,19 @@
   <div class="artist-hero__inner container">
     <div class="artist-hero__title grid js-visibility reveal-slide">
       <div class="artist-hero__name reveal-container">
-        <h1 class="artist-hero__first-name js-visibility reveal-text">Patricia </h1>
+        <h1 class="artist-hero__first-name js-visibility reveal-text"><?php echo $first ?></h1>
       </div>
       <div class="artist-hero__name reveal-container">
-        <h1 class="artist-hero__second-name js-visibility reveal-text">Treib</h1>
+        <h1 class="artist-hero__second-name js-visibility reveal-text"><?php echo $second ?></h1>
       </div>
     </div>
     <div class="artist-hero__image-text grid"> 
-      <div class="artist-hero__image-wrap"><img src="./img/double-one.jpg" alt=""></div>
+      <div class="artist-hero__image-wrap">
+      <?php _get_template_part('templates/components/_resp-img', ['field' => $image, 'sizes' => '(max-width: 1023px) 100vw, 950px']); ?>  
+        <!-- <img src="./img/double-one.jpg" alt=""> -->
+      </div>
       <div class="artist-hero__text-wrap"> 
-        <h3>"You can see Treib's hand puckering and smoothing shapes, just like a body might sulpt a bedsheet."</h3>
+        <h3><?php echo $copy ?></h3>
       </div>
     </div>
   </div>

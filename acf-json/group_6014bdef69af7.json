@@ -1,10 +1,10 @@
 {
-    "key": "group_6013caa79b390",
-    "title": "Block: Artist Hero",
+    "key": "group_6014bdef69af7",
+    "title": "Block: Full Width Video",
     "fields": [
         {
-            "key": "field_6013cab32e444",
-            "label": "Artist Hero",
+            "key": "field_6014bdf2d69f2",
+            "label": "Block: Full Width Video",
             "name": "",
             "type": "message",
             "instructions": "",
@@ -20,50 +20,12 @@
             "esc_html": 0
         },
         {
-            "key": "field_6014ba82c3b35",
-            "label": "Artist First Name",
-            "name": "artist_first_name",
-            "type": "text",
+            "key": "field_6014be4985368",
+            "label": "Upload a video",
+            "name": "upload_a_video",
+            "type": "file",
             "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_6014ba91c3b36",
-            "label": "Artist Second Name",
-            "name": "artist_second_name",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_6014baa1c3b37",
-            "label": "Image",
-            "name": "image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -71,21 +33,35 @@
                 "id": ""
             },
             "return_format": "array",
-            "preview_size": "medium",
             "library": "all",
-            "min_width": "",
-            "min_height": "",
             "min_size": "",
-            "max_width": "",
-            "max_height": "",
             "max_size": "",
             "mime_types": ""
         },
         {
-            "key": "field_6014bab9c3b38",
-            "label": "Copy",
-            "name": "copy",
-            "type": "textarea",
+            "key": "field_6014be5f85369",
+            "label": "Headline",
+            "name": "headline",
+            "type": "text",
+            "instructions": "The headline is Red - use span tags for black font. ie - &lt;span>black &lt\/span>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6014bec18536a",
+            "label": "Credits",
+            "name": "credits",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -96,9 +72,9 @@
             },
             "default_value": "",
             "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": ""
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -106,7 +82,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/artist-hero"
+                "value": "acf\/full-width-video"
             }
         ]
     ],
@@ -118,5 +94,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1611971574
+    "modified": 1611972790
 }

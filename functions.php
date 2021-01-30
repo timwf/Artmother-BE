@@ -62,4 +62,9 @@ function theme_after_setup_theme() {
   add_image_size('mega-large', 1920);
 }
 
+function checktoradio(){
+  echo '<script type="text/javascript">jQuery("#categorychecklist-pop input, #categorychecklist input, .cat-checklist input").each(function(){this.type="radio"});</script>';
+}
+
+add_action('admin_footer', 'checktoradio');
 

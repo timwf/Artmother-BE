@@ -56,7 +56,7 @@ function artist_custom_post_type() {
 		'has_archive'           => false,
 		'exclude_from_search'   => true,
 		'publicly_queryable'    => true,
-		'rewrite'               => false,
+		'rewrite'               => true,
 		'capability_type'       => 'post',
 		'show_in_rest'          => true,
 	);
@@ -124,71 +124,11 @@ function artwork_custom_post_type() {
 		'has_archive'           => false,
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
-		'rewrite'               => $rewrite,
+		'rewrite'               => true,
 		'capability_type'       => 'post',
 		'show_in_rest'          => true,
 	);
   register_post_type( 'artwork', $args );
 }
 add_action( 'init', 'artwork_custom_post_type', 0 );
-
-
-
-// Register Event Custom Post Type
-function event_custom_post_type() {
-
-	$labels = array(
-		'name'                  => _x( 'Events', 'Post Type General Name', 'esme-theme' ),
-		'singular_name'         => _x( 'Event', 'Post Type Singular Name', 'esme-theme' ),
-		'menu_name'             => __( 'Events', 'esme-theme' ),
-		'name_admin_bar'        => __( 'Event', 'esme-theme' ),
-		'archives'              => __( 'Event Archives', 'esme-theme' ),
-		'attributes'            => __( 'Event Attributes', 'esme-theme' ),
-		'parent_item_colon'     => __( 'Parent Event:', 'esme-theme' ),
-		'all_items'             => __( 'All Events', 'esme-theme' ),
-		'add_new_item'          => __( 'Add New Event', 'esme-theme' ),
-		'add_new'               => __( 'Add New', 'esme-theme' ),
-		'new_item'              => __( 'New Event', 'esme-theme' ),
-		'edit_item'             => __( 'Edit Event', 'esme-theme' ),
-		'update_item'           => __( 'Update Event', 'esme-theme' ),
-		'view_item'             => __( 'View Event', 'esme-theme' ),
-		'view_items'            => __( 'View Events', 'esme-theme' ),
-		'search_items'          => __( 'Search Event', 'esme-theme' ),
-		'not_found'             => __( 'Not found', 'esme-theme' ),
-		'not_found_in_trash'    => __( 'Not found in Trash', 'esme-theme' ),
-		'featured_image'        => __( 'Featured Image', 'esme-theme' ),
-		'set_featured_image'    => __( 'Set featured image', 'esme-theme' ),
-		'remove_featured_image' => __( 'Remove featured image', 'esme-theme' ),
-		'use_featured_image'    => __( 'Use as featured image', 'esme-theme' ),
-		'insert_into_item'      => __( 'Insert into Event', 'esme-theme' ),
-		'uploaded_to_this_item' => __( 'Uploaded to this Event', 'esme-theme' ),
-		'items_list'            => __( 'Events list', 'esme-theme' ),
-		'items_list_navigation' => __( 'Events list navigation', 'esme-theme' ),
-		'filter_items_list'     => __( 'Filter Events list', 'esme-theme' ),
-	);
-	$args = array(
-		'label'                 => __( 'Event', 'esme-theme' ),
-		'description'           => __( 'Event Post Type Description', 'esme-theme' ),
-		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
-		'hierarchical'          => false,
-		'public'                => false,
-		'show_ui'               => true,
-		'show_in_menu'          => true,
-		'menu_position'         => 5,
-		'menu_icon'             => 'dashicons-admin-post',
-		'show_in_admin_bar'     => true,
-		'show_in_nav_menus'     => false,
-		'can_export'            => true,
-		'has_archive'           => false,
-		'exclude_from_search'   => true,
-		'publicly_queryable'    => true,
-		'rewrite'               => false,
-		'capability_type'       => 'post',
-		'show_in_rest'          => true,
-	);
-	register_post_type( 'event', $args );
-
-}
-add_action( 'init', 'event_custom_post_type', 0 );
 
