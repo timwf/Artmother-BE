@@ -79,7 +79,8 @@
   &__image-wrap{
     grid-column-start: 3;
     grid-column-end: 13;
-    // height: calc(100vh - 281px);
+    position: relative;
+
 
     @include respond-to(md){
       grid-column-start: 4;
@@ -100,6 +101,8 @@
       @include respond-to(md){
         transform: translateX(0px);
         max-height: 100%;
+        position: absolute;
+        right: 0;
       }
     }
   }
@@ -146,9 +149,9 @@
     justify-content: center;
     margin-top: 20px;
     position: absolute;
-    padding-bottom: 13px;
+    padding-bottom: 0px;
     padding-top: 10px;
-    bottom: 0;
+    bottom: -17px;
     background-color: white;
 
     @include respond-to(xl){
@@ -158,6 +161,7 @@
     svg{
       height: 20px;
       transform: rotate(180deg);
+      margin-bottom: 17px;
       position: relative;
       animation-name: bounce;
       animation-duration: 1.5s;

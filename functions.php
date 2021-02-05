@@ -68,3 +68,18 @@ function checktoradio(){
 
 add_action('admin_footer', 'checktoradio');
 
+//admin page
+
+function my_login_logo() { ?>
+  <style type="text/css">
+      #wp-submit {
+        color: white !important;
+      }
+
+      .login input[type=text]{
+        color: white !important;
+      }
+  </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+

@@ -156,3 +156,13 @@ add_action('get_header', 'remove_admin_bar_bump');
 //     remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=category');
 //     remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=post_tag');
 // }
+
+
+
+//hide admin bar
+add_action('after_setup_theme', 'remove_admin_bar');
+function remove_admin_bar() {
+
+  show_admin_bar(false);
+
+}

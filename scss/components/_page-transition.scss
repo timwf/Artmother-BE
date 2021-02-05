@@ -5,7 +5,7 @@
   position: fixed;
   z-index: 9999;
   top: 0px;
-  transform: translateX(100%);
+  transform: translateX(0%);
   transition: 0.8s;
 
   &.active{

@@ -97,10 +97,116 @@ function theme_acf_blocks_init() {
     )); 
 
 
+    acf_register_block_type(array(
+			'name'				=> 'shipping',
+			'title'				=> __('Shipping'),
+			'description'		=> __('Shipping'),
+      'render_callback'	=> 'theme_acf_block_render_callback',
+      'render_template' => 'templates/blocks/shipping.php',
+			'icon'				=> 'align-center',
+			'keywords'			=> array( '' ),
+      'mode' 	=> 'edit',
+    )); 
+
+    acf_register_block_type(array(
+			'name'				=> 'about',
+			'title'				=> __('About'),
+			'description'		=> __('About'),
+      'render_callback'	=> 'theme_acf_block_render_callback',
+      'render_template' => 'templates/blocks/about.php',
+			'icon'				=> 'align-center',
+			'keywords'			=> array( '' ),
+      'mode' 	=> 'edit',
+    )); 
+
+    acf_register_block_type(array(
+			'name'				=> 'contact-us',
+			'title'				=> __('Contact Us'),
+			'description'		=> __('Contact Us'),
+      'render_callback'	=> 'theme_acf_block_render_callback',
+      'render_template' => 'templates/blocks/contact-us.php',
+			'icon'				=> 'align-center',
+			'keywords'			=> array( '' ),
+      'mode' 	=> 'edit',
+    )); 
+
+    acf_register_block_type(array(
+			'name'				=> 'full-width-stand-first',
+			'title'				=> __('Full Width Stand First'),
+			'description'		=> __('Full Width Stand First'),
+      'render_callback'	=> 'theme_acf_block_render_callback',
+      'render_template' => 'templates/blocks/full-width-stand-first.php',
+			'icon'				=> 'align-center',
+			'keywords'			=> array( '' ),
+      'mode' 	=> 'edit',
+    )); 
+
+    acf_register_block_type(array(
+			'name'				=> 'double-image',
+			'title'				=> __('Double Image'),
+			'description'		=> __('Double Image'),
+      'render_callback'	=> 'theme_acf_block_render_callback',
+      'render_template' => 'templates/blocks/double-image.php',
+			'icon'				=> 'align-center',
+			'keywords'			=> array( '' ),
+      'mode' 	=> 'edit',
+    )); 
+
+    acf_register_block_type(array(
+			'name'				=> 'artist-copy',
+			'title'				=> __('Artist Copy'),
+			'description'		=> __('Artist Copy'),
+      'render_callback'	=> 'theme_acf_block_render_callback',
+      'render_template' => 'templates/blocks/artist-copy.php',
+			'icon'				=> 'align-center',
+			'keywords'			=> array( '' ),
+      'mode' 	=> 'edit',
+    )); 
+
+    acf_register_block_type(array(
+			'name'				=> 'artist-quote',
+			'title'				=> __('Artist Quote'),
+			'description'		=> __('Artist Quote'),
+      'render_callback'	=> 'theme_acf_block_render_callback',
+      'render_template' => 'templates/blocks/artist-quote.php',
+			'icon'				=> 'align-center',
+			'keywords'			=> array( '' ),
+      'mode' 	=> 'edit',
+    )); 
+
+    acf_register_block_type(array(
+			'name'				=> 'artist-additional-info',
+			'title'				=> __('Artist Additional Info'),
+			'description'		=> __('Artist Additional Info'),
+      'render_callback'	=> 'theme_acf_block_render_callback',
+      'render_template' => 'templates/blocks/artist-additional-info.php',
+			'icon'				=> 'align-center',
+			'keywords'			=> array( '' ),
+      'mode' 	=> 'edit',
+    )); 
+
+    acf_register_block_type(array(
+			'name'				=> 'artist-timeline',
+			'title'				=> __('Artist Timeline'),
+			'description'		=> __('Artist Timeline'),
+      'render_callback'	=> 'theme_acf_block_render_callback',
+      'render_template' => 'templates/blocks/artist-timeline.php',
+			'icon'				=> 'align-center',
+			'keywords'			=> array( '' ),
+      'mode' 	=> 'edit',
+    )); 
+
+
+    
 
 
 
 
+    
+    
+    
+    
+    
     
   }
 }
@@ -121,7 +227,25 @@ function theme_allowed_block_types($allowed_blocks, $post) {
     'acf/full-width-video', 
     'acf/artists',    
     'acf/art',   
-    'acf/art-single',     
+    'acf/art-single',    
+    'acf/shipping',  
+    'acf/about',    
+    'acf/contact-us',
+    'acf/full-width-stand-first',
+    'acf/double-image',
+    'acf/artist-copy',
+    'acf/artist-quote',
+    'acf/artist-additional-info',
+    'acf/artist-timeline',
+
+
+    
+    
+
+    
+
+    
+     
   );
 }
 add_filter('allowed_block_types', 'theme_allowed_block_types', 10, 2);

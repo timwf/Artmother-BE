@@ -278,7 +278,7 @@ $(document).ready(() => {
     $(btn).on('click', function(){
       $(menu).toggleClass('active')
       $(bg).toggleClass('active')
-      console.log('clicked');
+
       
       if ($(menu).hasClass('active')){
         disableScrolling() 
@@ -310,18 +310,18 @@ $(document).ready(() => {
       $(title).addClass('delay')
       $(line).css("animation-delay", "5.5s")     
       homeLoaded = true
-    }
-    
+    }    
 
     if(!$(subtitle).length){
-      console.log('not found');
       return;
     }
 
     if(!wrap.length){
       return
     }
+
     disableScrolling()
+    console.log('disabled');
 
 
     let tl = gsap.timeline();
@@ -393,7 +393,6 @@ $(document).ready(() => {
         let newScroll = Math.abs(scrollPos - height)        
 
         if (newScroll > 99) {
-          console.log(Math.abs(newScroll));
           scale = newScroll
         }
       }    
@@ -513,9 +512,10 @@ $(document).ready(() => {
       const transition = $('.page-tranition')
       $('.mobile-page-header__menu').removeClass('active')
       $('.mobile-page-header__hamburger').removeClass('active')
+      console.log('content animation');
 
       let tl = gsap.timeline();
-      tl.to(transition, {duration: 0.2, stagger: 0.3, opacity: 1, x: "100%"})
+      tl.to(transition, {duration: 0.03, stagger: 0.3, opacity: 1, x: "100%"})
     } 
 
 
@@ -551,13 +551,17 @@ $(document).ready(() => {
     let searchTerm = ""
     const searchGrid = $('.artists__grid')
     const searchIcon = $('.artists__search-bar svg')
-    enableScrolling()
+
+
+    
 
 
 
     if(!$(searchGrid).length){
       return
     }
+
+    enableScrolling()
 
     $('#artists__search-input').focus(function(){
       $(searchIcon).hide()
@@ -597,16 +601,15 @@ $(document).ready(() => {
     const allItemsInit = $('.art__item')
     const artistTitle = $('.js-artist-title')
 
-    if(!$(grid).length){
+    if(!grid.length){
       return;
     }
 
     let url = location.hash;
     url = url.replace(/%20/g, " ").substring(1);
-    console.log(url);
 
     $(allItemsInit).each(function(){
-      let artId = $(this).attr('data-artist')     
+      let artId = $(this).attr('data-artist')      
 
       if(url && artId != url){
         $(this).remove()
@@ -689,6 +692,10 @@ $(document).ready(() => {
     const sortBtn = $('.art__sort')
     const filterContainer = $('.art__filter-conatainer')
     const sortContainer = $('.art__sort-conatainer')
+
+    if(!filterBtn.length){
+      return;
+    }
 
     $(filterBtn).on('click', function(){
       $(sortContainer).removeClass('active')
@@ -806,13 +813,17 @@ $(document).ready(() => {
     const close = $('.art-single__popup-inner svg')
     const container = $('.art-single__popup')
     const btn = $('.js-artworks-form')
+    const frosty = $('.art-single__frosty')
 
     $(btn).on('click', function(){
+      $(frosty).addClass('active')
       $(container).addClass('active')
       disableScrolling()
+      
     })
 
     $(close).on('click', function(){
+      $(frosty).removeClass('active')
       $(container).removeClass('active')
       enableScrolling()
     })

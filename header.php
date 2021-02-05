@@ -67,7 +67,7 @@
       </div>
     </header>
     <main-wrap data-barba="wrapper">
-      <main data-barba="container" data-barba-namespace="home">
+      <main data-barba="container" data-barba-namespace="<?php echo basename(get_permalink()) ?>">
 
 
 
