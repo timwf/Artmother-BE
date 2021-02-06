@@ -373,7 +373,7 @@ $(document).ready(() => {
     });
 
     tl.to(centerLine, {duration: 6, stagger: 0.3, width: '98%'})
-      .to(leadingLines, {duration: 1, stagger: 0, height: '48%'}, '-=5.2')
+      .to(leadingLines, {duration: 1, stagger: 0, height: '20%'}, '-=5.2')
       // .to(date, {duration: 1, stagger: 1, opacity: 1, y: 0 }, '-=9.2')
   }
 
@@ -848,6 +848,47 @@ $(document).ready(() => {
     
   }
 
+  function initMobileTimelineLayout(){
+    const top = $('.js-top-mobile-time-width')
+    const topGrid = $('.mobile-author-timeline__top')
+    const bottomGrid = $('.mobile-author-timeline__bottom')
+    const inner = $('.mobile-author-timeline__inner')    
+    let gridWidth = 0
+    gridWidthBottom = 0
+    gridWidthTop = 0
+
+    $(top).each(function(){
+      let spanWidth = parseInt($(this).attr('data-general-width'))
+      let widthCounterTop = parseInt($(this).attr('data-width-count')) 
+      let widthCounterBottom = parseInt($(this).attr('data-width-count-bottom')) 
+
+      if (!isNaN(widthCounterTop)) {
+        gridWidthTop = gridWidthTop + widthCounterTop
+      }
+
+      if (!isNaN(widthCounterBottom)) {
+        gridWidthBottom = gridWidthBottom + widthCounterBottom
+      }
+
+      $(this).css("grid-column", `span ${spanWidth}`)
+    })
+
+    gridWidthTop > gridWidthBottom ? gridWidth = gridWidthTop : gridWidth = gridWidthBottom
+
+    console.log(gridWidthBottom);
+    console.log(gridWidthTop);
+
+    $(topGrid).css("grid-template-columns", `repeat(${gridWidth},minmax(0,1fr))`)
+    $(bottomGrid).css("grid-template-columns", `repeat(${gridWidth},minmax(0,1fr))`)
+    $(inner).css("width", `${gridWidth * 150}px`)
+
+
+
+
+
+
+  }
+
 
 
 
@@ -876,6 +917,7 @@ $(document).ready(() => {
     initArtworkPopup()
     initHeroArrow()
     initFooterArrow()
+    initMobileTimelineLayout()
   }
 
   
